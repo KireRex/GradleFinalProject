@@ -13,6 +13,8 @@ public class ShowJokeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_joke);
 
-        ((TextView) findViewById(R.id.joke_text)).setText(getIntent().getStringExtra(JOKE_EXTRA_ID));
+        String joke = getIntent().getStringExtra(JOKE_EXTRA_ID);
+
+        ((TextView) findViewById(R.id.joke_text)).setText(joke != null ? joke : "No joke received");
     }
 }

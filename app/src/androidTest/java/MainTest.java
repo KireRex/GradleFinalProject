@@ -22,15 +22,15 @@ import static com.scheffer.erik.androidjokelibrary.ShowJokeActivity.JOKE_EXTRA_I
 @RunWith(AndroidJUnit4.class)
 public class MainTest {
     @Rule
-    public IntentsTestRule<MainActivity> recipesActivityRule =
+    public IntentsTestRule<MainActivity> mainActivityRule =
             new IntentsTestRule<>(MainActivity.class);
     private IdlingResource idlingResource;
 
     @Before
     public void setUp() throws Exception {
-        recipesActivityRule.getActivity()
-                           .getSupportFragmentManager().beginTransaction();
-        idlingResource = recipesActivityRule.getActivity().getIdlingResource();
+        mainActivityRule.getActivity()
+                        .getSupportFragmentManager().beginTransaction();
+        idlingResource = mainActivityRule.getActivity().getIdlingResource();
         Espresso.registerIdlingResources(idlingResource);
     }
 
