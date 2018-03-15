@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.cloud.tools.endpoints-framework-client'
 
+ext {
+    espressoLibVersion = '3.0.1'
+}
+
 buildscript {
     repositories {
         jcenter()
@@ -62,4 +66,9 @@ dependencies {
     compile project(':androidjokelibrary')
 
     testImplementation 'junit:junit:4.12'
+
+    androidTestCompile "com.android.support.test.espresso:espresso-core:${espressoLibVersion}"
+    androidTestCompile "com.android.support.test.espresso:espresso-contrib:${espressoLibVersion}"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:${espressoLibVersion}"
+    compile "com.android.support.test.espresso:espresso-idling-resource:${espressoLibVersion}"
 }
